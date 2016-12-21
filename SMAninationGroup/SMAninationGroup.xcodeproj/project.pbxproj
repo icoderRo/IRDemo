@@ -128,6 +128,7 @@
 				TargetAttributes = {
 					F45F77841E092AD4008AD07E = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 38QS4M9J37;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -290,7 +291,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 38QS4M9J37;
 				INFOPLIST_FILE = SMAninationGroup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.icoderRo.github.com.SMAninationGroup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -301,7 +304,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 38QS4M9J37;
 				INFOPLIST_FILE = SMAninationGroup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.icoderRo.github.com.SMAninationGroup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -327,6 +332,7 @@
 				F45F779E1E092AD4008AD07E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
