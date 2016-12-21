@@ -16,10 +16,13 @@
 
 @property (nonatomic, strong) NSMutableSet *reusePool;
 @property (nonatomic, strong) NSMutableArray *displayPool;
+@property (nonatomic, strong) NSArray *images;
+
 @property (nonatomic, strong) NSTimer *timer;
 
 @property (nonatomic, assign) NSUInteger emitterCount;
 @property (nonatomic, assign) NSUInteger totalCount;
+
 @property (nonatomic, assign) BOOL paused;
 
 
@@ -56,7 +59,7 @@
     if (self = [super initWithFrame:frame]) {
         _emitterCount = 0;
         _totalCount = 0;
-        _size = CGSizeMake(emitterWH, emitterWH);
+        _emitterSize = CGSizeMake(emitterWH, emitterWH);
     }
     
     return self;
@@ -70,7 +73,7 @@
     }
     
     _emitterCount--;
-    
+//    NSLog(@"%zd", _emitterCount);
     SMEmitterLayer *layer = [self dequeueReuseLayer];
     [self.layer addSublayer:layer];
     [self.displayPool addObject:layer];
@@ -108,7 +111,7 @@
     animationGroup.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     animationGroup.animations = @[keyFrameAnimation, rotationAnimation,alphaAnimation, scaleAnimation];
     animationGroup.delegate = self;
-    [layer addAnimation:animationGroup forKey:[NSString stringWithFormat:@"animation"]];
+    [layer addAnimation:animationGroup forKey:@"icoderRo.github.com"];
     
 }
 
@@ -123,14 +126,14 @@
             centerX = width * 0.5;
             break;
         case SMEmitterPositionRight:
-            centerX = width - _size.width - 15;
+            centerX = width - _emitterSize.width - 15;
             if (centerX <= 0) {
                 centerX = width * 0.5;
             }
             break;
             
         case SMEmitterPositionLeft:
-             centerX = _size.width + 15;
+             centerX = _emitterSize.width + 15;
             if (centerX <= 0) {
                 centerX = width * 0.5;
             }
@@ -185,13 +188,21 @@
     }
     
     layer = [SMEmitterLayer layer];
-    layer.frame = CGRectMake(0, 0, _size.width, _size.height);
+    layer.frame = CGRectMake(0, 0, _emitterSize.width, _emitterSize.height);
+    
+    if (self.images.count > 0) {
+        int random = arc4random_uniform((int)self.images.count);
+        layer.contents = (__bridge id _Nullable)([UIImage imageNamed:self.images[random]].CGImage);
+        return layer;
+    }
+    
     [layer setNeedsDisplay];
     
     return layer;
 }
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    
     SMEmitterLayer *layer = self.displayPool.firstObject;
     [self.displayPool removeObject:layer];
     [layer removeAllAnimations];
@@ -207,23 +218,43 @@
     }
 }
 
-#pragma mark - Control
+#pragma mark - Fire
+
+/**
+ when enterBackground we call "pause" to stop animation,
+ in the background, when we receive message,
+ we only receive message, the view is dismiss so no need to animation,
+ so when the view is showed and want to regain animation, must to call "resume"
+ */
 - (void)fireWithEmitterCount:(NSUInteger)emitterCount {
     _emitterCount += emitterCount;
     _totalCount += emitterCount;
+    if (self.paused) return;
     [self timer];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self fireWithEmitterCount:1];
+- (void)fireWithImageNames:(NSArray *)images emitterCount:(NSUInteger)emitterCount {
+    _images = images;
+    [self fireWithEmitterCount:emitterCount];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSUInteger count = 1;
+    [self fireWithEmitterCount:count];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(emitterView:didAddEmitterCount:)]) {
+        [self.delegate emitterView:self didAddEmitterCount:count];
+    }
+}
+
+#pragma mark - Control
 - (void)pause {
     self.paused = YES;
     CFTimeInterval pausedTime = [self.layer convertTime:CACurrentMediaTime()
                                               fromLayer:nil];
     self.layer.speed = 0.0;
     self.layer.timeOffset = pausedTime;
+    [_timer invalidate];
+    _timer = nil;
 }
 
 - (void)resume {
@@ -236,13 +267,13 @@
                                                   fromLayer:nil] - pausedTime;
     self.layer.beginTime = timeSincePause;
     self.paused = NO;
+    [self timer];
 }
 
 - (void)stop {
     [_timer invalidate];
     _timer = nil;
     _emitterCount = 0;
-    
 }
 
 - (NSUInteger)totalCount {

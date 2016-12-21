@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SMEmitterView;
 @interface SMEmitterLayer : CALayer
 @end
 
@@ -16,24 +17,29 @@ typedef NS_ENUM(NSUInteger, SMEmitterPositionType) {
     SMEmitterPositionLeft = 2,
 };
 
+@protocol SMEmitterViewDelegate <NSObject>
+
+@optional
+
+/// Listening to self click event
+- (void)emitterView:(SMEmitterView *)emitterView didAddEmitterCount:(NSUInteger)emitterCount;
+
+@end
+
 @interface SMEmitterView : UIView
 
-/**
- the position of emitters style
+/** 
+    use: "- (void)fireWithEmitterCount:(NSUInteger)emitterCount"
+    or   "- (void)fireWithImageNames:(NSArray *)images
+                        emitterCount:(NSUInteger)emitterCount"
+    to start fire
+ 
+ 
+    warning: when enterBackground we call "pause" to stop animation,
+             in the background, when we receive message,
+             we only receive message, the view is dismiss and no need to animation,
+             so when the view is showed and want to regain animation, must to call "resume"
  */
-@property (nonatomic, assign) SMEmitterPositionType positionType;
-
-
-/**
-  return total emitter count 
- */
-@property (nonatomic, assign, readonly) NSUInteger totalCount;
-
-
-/**
- the emitters size, default is 36 
- */
-@property (nonatomic, assign) CGSize size;
 
 
 /**
@@ -42,6 +48,40 @@ typedef NS_ENUM(NSUInteger, SMEmitterPositionType) {
  @param emitterCount "need add count to current fire"
  */
 - (void)fireWithEmitterCount:(NSUInteger)emitterCount;
+
+
+/**
+ open fire and add the conut to current fire, the emitter use image
+
+ @param images imageName array
+ @param emitterCount "need add count to current fire"
+ */
+- (void)fireWithImageNames:(NSArray *)images
+              emitterCount:(NSUInteger)emitterCount;
+
+
+/**
+ the position of emitters style
+ */
+@property (nonatomic, assign) SMEmitterPositionType positionType;
+
+
+/**
+ return total emitter count
+ */
+@property (nonatomic, assign, readonly) NSUInteger totalCount;
+
+
+/**
+ the emitters size, default is 36
+ */
+@property (nonatomic, assign) CGSize emitterSize;
+
+
+/**
+ delegate: return emitters by self
+ */
+@property (nonatomic, weak) id<SMEmitterViewDelegate> delegate;
 
 
 /**
