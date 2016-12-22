@@ -49,59 +49,66 @@
         emitter.alphaSpeed = -1.0;
         emitter.lifetime = 0.7;
         emitter.lifetimeRange = 0.3;
-        emitter.velocity = 30.00;
-        emitter.velocityRange = 4.00;
+        emitter.velocity = 40.00;
+        emitter.velocityRange = 5.00;
         emitter.scale = 0.1;
         emitter.scaleRange = 0.02;
-        emitter.contents = (__bridge id _Nullable)image.CGImage;
+        emitter.birthRate = 0;
         
+        emitter.contents = (__bridge id _Nullable)image.CGImage;
         [emitterCells addObject:emitter];
         [self.keyPaths addObject:keyPath];
     }
-
+    
     _emitterLayer = [CAEmitterLayer layer];
     _emitterLayer.name = @"emitterLayer";
     _emitterLayer.emitterShape = kCAEmitterLayerCircle;
     _emitterLayer.emitterMode = kCAEmitterLayerOutline;
     _emitterLayer.emitterCells = emitterCells;
-    _emitterLayer.renderMode = kCAEmitterLayerOldestFirst;
+    _emitterLayer.renderMode = kCAEmitterLayerOldestLast;
     _emitterLayer.masksToBounds = NO;
     _emitterLayer.zPosition = -1;
     _emitterLayer.position = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.5);
-    _emitterLayer.position = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.5);
-
+    
     [self.layer addSublayer:_emitterLayer];
 }
 
 - (void)setSelected:(BOOL)selected {
+    [super setSelected:selected];
     [self fire:selected];
 }
 
 - (void)fire:(BOOL)selected {
     
     CAKeyframeAnimation *scaleAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
-    scaleAnimation.values = @[@0.8, @1.0];
-    scaleAnimation.duration = .2;
-    
+         scaleAnimation.duration = 0.25;
     if (selected) {
-        
-        for (NSString *keyPath in self.keyPaths) {
-            [self.emitterLayer setValue:@(500) forKeyPath:keyPath];
-        }
-       
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            for (NSString *keyPath in self.keyPaths) {
-                [self.emitterLayer setValue:@(0) forKeyPath:keyPath];
-            }
-
-            [super setSelected:selected];
-        });
+        scaleAnimation.values = @[@1.1, @1.3, @1.5, @1.2 , @1.0];
+   
+        [self start];
         
     } else {
-        [super setSelected:selected];
+        scaleAnimation.values = @[@0.8, @0.6, @0.8, @1.0];
+
     }
+    
     scaleAnimation.calculationMode = kCAAnimationCubic;
     [self.layer addAnimation:scaleAnimation forKey:@"transform.scale"];
+}
+
+- (void)start {
+    for (NSString *keyPath in self.keyPaths) {
+        [self.emitterLayer setValue:@1500 forKeyPath:keyPath];
+    }
+    self.emitterLayer.beginTime = CACurrentMediaTime();
+    
+    [self performSelector:@selector(stop) withObject:nil afterDelay:0.1];
+}
+
+- (void)stop {
+    for (NSString *keyPath in self.keyPaths) {
+        [self.emitterLayer setValue:@0 forKeyPath:keyPath];
+    }
 }
 
 // cancel highlight

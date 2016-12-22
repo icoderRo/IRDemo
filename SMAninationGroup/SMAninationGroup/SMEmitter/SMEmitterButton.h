@@ -11,7 +11,7 @@
 @interface SMEmitterButton : UIButton
 
 /**
- creat
+ creat by this method
 
  @param emitters an array load UIImage
  @param frame frame

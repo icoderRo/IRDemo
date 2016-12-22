@@ -31,7 +31,8 @@ typedef NS_ENUM(NSUInteger, SMEmitterPositionType) {
 /** 
     use: "- (void)fireWithEmitterCount:(NSUInteger)emitterCount"
     to start fire
- 
+    
+    if set the "images" then use image, otherwise use default drawHeart
  
     warning: when enterBackground we call "pause" to stop animation,
              in the background, when we receive message,

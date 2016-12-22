@@ -20,25 +20,33 @@
 @property (nonatomic, weak) SMEmitterView *emitterView1;
 @property (nonatomic, weak) SMEmitterView *emitterView2;
 
-
 @end
 
 @implementation SMEmitterViewController
+
+- (void)loadView {
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"camera_blur_1"]];
+    imageView.userInteractionEnabled = YES;
+    self.view = imageView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     CGFloat width = (kScreenW / 3);
     
-    NSString *path = path(@"emitter", @"bundle", @"heart");
-    NSString *path1 = path(@"emitter", @"bundle", @"heart_N");
+    NSString *path = path(@"emitter", @"bundle", @"heartH");
+    NSString *path1 = path(@"emitter", @"bundle", @"heartN");
     
+    NSString *path2 = path(@"emitter", @"bundle", @"zanH");
+    NSString *path3 = path(@"emitter", @"bundle", @"zanN");
+
     NSArray *sparkles = @[[UIImage imageWithContentsOfFile:path(@"emitter", @"bundle", @"Sparkle1")], [UIImage imageWithContentsOfFile:path(@"emitter", @"bundle", @"Sparkle3")]];
     
     {
         SMEmitterView *emitterView = [[SMEmitterView alloc] init];
         emitterView.frame = CGRectMake(10, 120, width, 400);
-        emitterView.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
+        emitterView.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.2];
         emitterView.emitterSize = CGSizeMake(36, 36);
         emitterView.positionType = SMEmitterPositionLeft;
         emitterView.delegate = self;
@@ -51,10 +59,11 @@
     {
         SMEmitterView *emitterView = [[SMEmitterView alloc] init];
         emitterView.frame = CGRectMake(width + 10, 120, width, 400);
-        emitterView.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
+        emitterView.backgroundColor = [[UIColor cyanColor] colorWithAlphaComponent:0.2];
         emitterView.positionType = SMEmitterPositionRight;
-        
-        NSString *path = path(@"emitter", @"bundle", @"龙珠");
+        emitterView.emitterSize = CGSizeMake(46, 46);
+        emitterView.delegate = self;
+        NSString *path = path(@"emitter", @"bundle", @"mouzhu");
         NSMutableArray *images = [NSMutableArray arrayWithCapacity:21];
         NSString *imageName = nil;
         UIImage *image = nil;
@@ -73,10 +82,11 @@
     {
         SMEmitterView *emitterView = [[SMEmitterView alloc] init];
         emitterView.frame = CGRectMake(2 * width + 10, 120, width, 400);
-        emitterView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:1];
+        emitterView.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.2];
         emitterView.positionType = SMEmitterPositionCenter;
-        
-        NSString *path = path(@"emitter", @"bundle", @"虎牙");
+        emitterView.emitterSize = CGSizeMake(23, 20);
+        emitterView.delegate = self;
+        NSString *path = path(@"emitter", @"bundle", @"mouya");
         NSMutableArray *images = [NSMutableArray arrayWithCapacity:9];
         NSString *imageName = nil;
         UIImage *image = nil;
@@ -93,10 +103,11 @@
     }
     
     {
-        SMEmitterButton *btn = [[SMEmitterButton alloc] initWithEmitters:sparkles frame:CGRectMake(30, 550, 46, 46)];
-        [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path] forState:UIControlStateSelected];
-        [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path1] forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(fire) forControlEvents:UIControlEventTouchUpInside];
+        SMEmitterButton *btn = [[SMEmitterButton alloc] initWithEmitters:@[[UIImage imageWithContentsOfFile:path(@"emitter", @"bundle", @"Sparkle2")]] frame:CGRectMake(30, 550, 46, 46)];
+        [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path2] forState:UIControlStateSelected];
+        [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path3] forState:UIControlStateNormal];
+        [btn.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        [btn addTarget:self action:@selector(fire:) forControlEvents:UIControlEventTouchUpInside];
         [btn setTitle:@"star" forState:UIControlStateNormal];
         [self.view addSubview:btn];
     }
@@ -105,7 +116,8 @@
         SMEmitterButton *btn = [[SMEmitterButton alloc] initWithEmitters:sparkles frame:CGRectMake(120, 550, 46, 46)];
         [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path] forState:UIControlStateSelected];
         [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path1] forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(stop) forControlEvents:UIControlEventTouchUpInside];
+        [btn.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        [btn addTarget:self action:@selector(stop:) forControlEvents:UIControlEventTouchUpInside];
         [btn setTitle:@"stop" forState:UIControlStateNormal];
         [self.view addSubview:btn];
     }
@@ -114,7 +126,7 @@
         SMEmitterButton *btn = [[SMEmitterButton alloc] initWithEmitters:sparkles frame:CGRectMake(210, 550, 46, 46)];
         [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path] forState:UIControlStateSelected];
         [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path1] forState:UIControlStateNormal];
-
+        [btn.titleLabel setFont:[UIFont systemFontOfSize:12]];
         [btn addTarget:self action:@selector(pause:) forControlEvents:UIControlEventTouchUpInside];
         [btn setTitle:@"pause" forState:UIControlStateNormal];
         [self.view addSubview:btn];
@@ -124,6 +136,7 @@
         SMEmitterButton *btn = [[SMEmitterButton alloc] initWithEmitters:sparkles frame:CGRectMake(300, 550, 46, 46)];
         [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path] forState:UIControlStateSelected];
         [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path1] forState:UIControlStateNormal];
+        [btn.titleLabel setFont:[UIFont systemFontOfSize:12]];
         [btn addTarget:self action:@selector(resume:) forControlEvents:UIControlEventTouchUpInside];
         [btn setTitle:@"resume" forState:UIControlStateNormal];
         [self.view addSubview:btn];
@@ -134,10 +147,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resume) name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
-- (void)fire {
+- (void)fire:(UIButton *)btn {
     [self.emitterView fireWithEmitterCount:100];
     [self.emitterView1 fireWithEmitterCount:100];
     [self.emitterView2 fireWithEmitterCount:100];
+    btn.selected = !btn.isSelected;
     
 }
 
@@ -150,6 +164,11 @@
     [self.emitterView stop];
     [self.emitterView1 stop];
     [self.emitterView2 stop];
+}
+
+- (void)stop:(UIButton *)btn {
+    [self stop];
+    btn.selected = !btn.isSelected;
 }
 
 - (void)pause:(UIButton *)btn {
