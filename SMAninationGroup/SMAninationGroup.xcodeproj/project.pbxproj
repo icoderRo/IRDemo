@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F436F78C1E0A88EA00222286 /* SMEmitterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F436F78B1E0A88EA00222286 /* SMEmitterButton.m */; };
+		F43B38951E0B6A2700112B78 /* emitter.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F43B38941E0B6A2700112B78 /* emitter.bundle */; };
 		F45F778A1E092AD4008AD07E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F45F77891E092AD4008AD07E /* main.m */; };
 		F45F778D1E092AD4008AD07E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F45F778C1E092AD4008AD07E /* AppDelegate.m */; };
 		F45F77901E092AD4008AD07E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F45F778F1E092AD4008AD07E /* ViewController.m */; };
@@ -18,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F436F78A1E0A88EA00222286 /* SMEmitterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMEmitterButton.h; sourceTree = "<group>"; };
+		F436F78B1E0A88EA00222286 /* SMEmitterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMEmitterButton.m; sourceTree = "<group>"; };
+		F43B38941E0B6A2700112B78 /* emitter.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = emitter.bundle; sourceTree = "<group>"; };
 		F45F77851E092AD4008AD07E /* SMAninationGroup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMAninationGroup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45F77891E092AD4008AD07E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F45F778B1E092AD4008AD07E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,6 +98,9 @@
 				F45F77A11E092C93008AD07E /* SMEmitterViewController.m */,
 				F45F77A31E092CA6008AD07E /* SMEmitterView.h */,
 				F45F77A41E092CA6008AD07E /* SMEmitterView.m */,
+				F436F78A1E0A88EA00222286 /* SMEmitterButton.h */,
+				F436F78B1E0A88EA00222286 /* SMEmitterButton.m */,
+				F43B38941E0B6A2700112B78 /* emitter.bundle */,
 			);
 			path = SMEmitter;
 			sourceTree = "<group>";
@@ -128,6 +136,7 @@
 				TargetAttributes = {
 					F45F77841E092AD4008AD07E = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 38QS4M9J37;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -155,6 +164,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43B38951E0B6A2700112B78 /* emitter.bundle in Resources */,
 				F45F77981E092AD4008AD07E /* LaunchScreen.storyboard in Resources */,
 				F45F77951E092AD4008AD07E /* Assets.xcassets in Resources */,
 				F45F77931E092AD4008AD07E /* Main.storyboard in Resources */,
@@ -172,6 +182,7 @@
 				F45F77A21E092C93008AD07E /* SMEmitterViewController.m in Sources */,
 				F45F77A51E092CA6008AD07E /* SMEmitterView.m in Sources */,
 				F45F778D1E092AD4008AD07E /* AppDelegate.m in Sources */,
+				F436F78C1E0A88EA00222286 /* SMEmitterButton.m in Sources */,
 				F45F778A1E092AD4008AD07E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 38QS4M9J37;
 				INFOPLIST_FILE = SMAninationGroup/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -303,7 +314,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 38QS4M9J37;
 				INFOPLIST_FILE = SMAninationGroup/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

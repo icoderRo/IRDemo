@@ -16,7 +16,7 @@
 
 @property (nonatomic, strong) NSMutableSet *reusePool;
 @property (nonatomic, strong) NSMutableArray *displayPool;
-@property (nonatomic, strong) NSArray *images;
+
 
 @property (nonatomic, strong) NSTimer *timer;
 
@@ -192,7 +192,7 @@
     
     if (self.images.count > 0) {
         int random = arc4random_uniform((int)self.images.count);
-        layer.contents = (__bridge id _Nullable)([UIImage imageNamed:self.images[random]].CGImage);
+        layer.contents = (__bridge id _Nullable)(((UIImage *)self.images[random]).CGImage);
         return layer;
     }
     
@@ -231,11 +231,6 @@
     _totalCount += emitterCount;
     if (self.paused) return;
     [self timer];
-}
-
-- (void)fireWithImageNames:(NSArray *)images emitterCount:(NSUInteger)emitterCount {
-    _images = images;
-    [self fireWithEmitterCount:emitterCount];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

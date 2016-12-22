@@ -30,8 +30,6 @@ typedef NS_ENUM(NSUInteger, SMEmitterPositionType) {
 
 /** 
     use: "- (void)fireWithEmitterCount:(NSUInteger)emitterCount"
-    or   "- (void)fireWithImageNames:(NSArray *)images
-                        emitterCount:(NSUInteger)emitterCount"
     to start fire
  
  
@@ -51,13 +49,11 @@ typedef NS_ENUM(NSUInteger, SMEmitterPositionType) {
 
 
 /**
- open fire and add the conut to current fire, the emitter use image
+ the emitter use image
 
- @param images imageName array
- @param emitterCount "need add count to current fire"
+ images: UIImage array
  */
-- (void)fireWithImageNames:(NSArray *)images
-              emitterCount:(NSUInteger)emitterCount;
+@property (nonatomic, strong) NSArray *images;
 
 
 /**
