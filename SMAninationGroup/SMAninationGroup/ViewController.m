@@ -2,7 +2,7 @@
 //  ViewController.m
 //  SMHeartStarAnimation
 //
-//  Created by simon on 16/12/16.
+//  Created by simon on 16/12/16.<https://github.com/icoderRo/SMAnimationDemo>
 //  Copyright © 2016年 simon. All rights reserved.
 //
 

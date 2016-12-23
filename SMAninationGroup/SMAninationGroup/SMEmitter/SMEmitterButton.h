@@ -2,7 +2,7 @@
 //  SMEmitterButton.h
 //  SMAninationGroup
 //
-//  Created by simon on 16/12/21.
+//  Created by simon on 16/12/20  <https://github.com/icoderRo/SMAnimationDemo>
 //  Copyright © 2016年 simon. All rights reserved.
 //
 
