@@ -19,7 +19,6 @@
 @property (nonatomic, weak) SMEmitterView *emitterView;
 @property (nonatomic, weak) SMEmitterView *emitterView1;
 @property (nonatomic, weak) SMEmitterView *emitterView2;
-
 @end
 
 @implementation SMEmitterViewController
@@ -40,7 +39,7 @@
     
     NSString *path2 = path(@"emitter", @"bundle", @"zanH");
     NSString *path3 = path(@"emitter", @"bundle", @"zanN");
-
+    
     NSArray *sparkles = @[[UIImage imageWithContentsOfFile:path(@"emitter", @"bundle", @"Sparkle1")], [UIImage imageWithContentsOfFile:path(@"emitter", @"bundle", @"Sparkle3")]];
     
     {
@@ -103,7 +102,8 @@
     }
     
     {
-        SMEmitterButton *btn = [[SMEmitterButton alloc] initWithEmitters:@[[UIImage imageWithContentsOfFile:path(@"emitter", @"bundle", @"Sparkle2")]] frame:CGRectMake(30, 550, 46, 46)];
+        SMEmitterButton *btn = [[SMEmitterButton alloc] initWithEffectType:SMEffectEmitter frame:CGRectMake(30, 550, 46, 46)];
+        btn.emitters = @[[UIImage imageWithContentsOfFile:path(@"emitter", @"bundle", @"Sparkle2")]];
         [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path2] forState:UIControlStateSelected];
         [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path3] forState:UIControlStateNormal];
         [btn.titleLabel setFont:[UIFont systemFontOfSize:12]];
@@ -113,7 +113,8 @@
     }
     
     {
-        SMEmitterButton *btn = [[SMEmitterButton alloc] initWithEmitters:sparkles frame:CGRectMake(120, 550, 46, 46)];
+        SMEmitterButton *btn = [[SMEmitterButton alloc] initWithEffectType:SMEffectEmitter frame:CGRectMake(120, 550, 46, 46)];
+        btn.emitters = sparkles;
         [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path] forState:UIControlStateSelected];
         [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path1] forState:UIControlStateNormal];
         [btn.titleLabel setFont:[UIFont systemFontOfSize:12]];
@@ -123,7 +124,9 @@
     }
     
     {
-        SMEmitterButton *btn = [[SMEmitterButton alloc] initWithEmitters:sparkles frame:CGRectMake(210, 550, 46, 46)];
+        SMEmitterButton *btn = [[SMEmitterButton alloc] initWithEffectType:SMEffectWare frame:CGRectMake(210, 550, 46, 46)];
+        btn.wareType = SMWareLayerHeart;
+        btn.wareColor = [UIColor redColor];
         [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path] forState:UIControlStateSelected];
         [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path1] forState:UIControlStateNormal];
         [btn.titleLabel setFont:[UIFont systemFontOfSize:12]];
@@ -133,9 +136,12 @@
     }
     
     {
-        SMEmitterButton *btn = [[SMEmitterButton alloc] initWithEmitters:sparkles frame:CGRectMake(300, 550, 46, 46)];
-        [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path] forState:UIControlStateSelected];
-        [btn setBackgroundImage:[UIImage imageWithContentsOfFile:path1] forState:UIControlStateNormal];
+        SMEmitterButton *btn = [[SMEmitterButton alloc] initWithEffectType:SMEffectWare frame:CGRectMake(300, 553, 40, 40)];
+        btn.wareType = SMWareLayerCircle;
+        btn.wareColor = [UIColor yellowColor];
+        [btn setBackgroundImage:[self imageWithColor:[UIColor grayColor]] forState:UIControlStateNormal];
+        [btn setBackgroundImage:[self imageWithColor:[UIColor yellowColor]] forState:UIControlStateSelected];
+
         [btn.titleLabel setFont:[UIFont systemFontOfSize:12]];
         [btn addTarget:self action:@selector(resume:) forControlEvents:UIControlEventTouchUpInside];
         [btn setTitle:@"resume" forState:UIControlStateNormal];
@@ -143,8 +149,8 @@
     }
     
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pause) name:UIApplicationDidEnterBackgroundNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resume) name:UIApplicationDidBecomeActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pauseNote) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resumeNote) name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
 - (void)fire:(UIButton *)btn {
@@ -153,11 +159,6 @@
     [self.emitterView2 fireWithEmitterCount:100];
     btn.selected = !btn.isSelected;
     
-}
-
-- (void)dealloc {
-    [self stop];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)stop {
@@ -172,19 +173,30 @@
 }
 
 - (void)pause:(UIButton *)btn {
-    [self.emitterView pause];
-    [self.emitterView1 pause];
-    [self.emitterView2 pause];
+    [self pauseNote];
     btn.selected = !btn.isSelected;
-    
 }
 
 - (void)resume:(UIButton *)btn {
+    [self resumeNote];
+    btn.selected = !btn.isSelected;
+}
+
+- (void)pauseNote {
+    [self.emitterView pause];
+    [self.emitterView1 pause];
+    [self.emitterView2 pause];
+}
+
+- (void)resumeNote {
     [self.emitterView resume];
     [self.emitterView1 resume];
     [self.emitterView2 resume];
-    btn.selected = !btn.isSelected;
-    
+}
+
+- (void)dealloc {
+    [self stop];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark -
@@ -193,5 +205,19 @@
     NSLog(@"%zd", emitterCount);
     
     // socket...
+}
+
+#pragma mark - 
+- (UIImage *)imageWithColor:(UIColor *)color
+{
+    CGRect rect = CGRectMake(0, 0, 40, 40);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context,color.CGColor);
+    CGContextFillEllipseInRect(context, rect);
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return img;
 }
 @end

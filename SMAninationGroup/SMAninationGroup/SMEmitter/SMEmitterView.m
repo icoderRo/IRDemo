@@ -81,22 +81,22 @@
     // direction -1 / 1
     int direction = 1 - (2 * arc4random_uniform(2));
     CGPathRef path = [self pathWithDirection:direction];
-    NSTimeInterval totalAnimationDuration = 7;
+    NSTimeInterval animationDuration = 7;
     
     CAKeyframeAnimation *keyFrameAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
     keyFrameAnimation.path = path;
-    keyFrameAnimation.duration = totalAnimationDuration;
+    keyFrameAnimation.duration = animationDuration;
     
     CAKeyframeAnimation *rotationAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation.z"];
     // 0.1 - 0.6
     CGFloat scaleRotate = (float)(1 + arc4random() % 6) / 10;
     rotationAnimation.values = @[@(0), @(M_PI_4 * direction * scaleRotate), @(-M_PI_4 * direction * scaleRotate)];
-    rotationAnimation.duration = totalAnimationDuration;
+    rotationAnimation.duration = animationDuration;
     
     CABasicAnimation *alphaAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
     alphaAnimation.fromValue = @(0.9);
     alphaAnimation.toValue = @(0);
-    alphaAnimation.duration =totalAnimationDuration;
+    alphaAnimation.duration =animationDuration;
     
     CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     scaleAnimation.fromValue = @(0);
@@ -106,7 +106,7 @@
     CAAnimationGroup *animationGroup = [CAAnimationGroup animation];
     animationGroup.repeatCount = 1;
     animationGroup.removedOnCompletion = NO;
-    animationGroup.duration = totalAnimationDuration;
+    animationGroup.duration = animationDuration;
     animationGroup.fillMode = kCAFillModeForwards;
     animationGroup.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     animationGroup.animations = @[keyFrameAnimation, rotationAnimation,alphaAnimation, scaleAnimation];
@@ -324,11 +324,11 @@
     [path addArcWithCenter:CGPointMake(leftPoint.x + radius, leftPoint.y) radius:radius startAngle:M_PI endAngle:0 clockwise:YES];
     
     //right curve ponit
-    CGPoint rightPoint = CGPointMake(leftPoint.x + 2*radius, leftPoint.y);
+    CGPoint rightPoint = CGPointMake(leftPoint.x + 2 * radius, leftPoint.y);
     [path addArcWithCenter:CGPointMake(rightPoint.x + radius, rightPoint.y) radius:radius startAngle:M_PI endAngle:0 clockwise:YES];
     
     //end point
-    CGPoint endPoint = CGPointMake(leftPoint.x + 4*radius, rightPoint.y);
+    CGPoint endPoint = CGPointMake(leftPoint.x + 4 * radius, rightPoint.y);
     [path addQuadCurveToPoint:point controlPoint:CGPointMake(endPoint.x, endPoint.y + radius)];
     
     // setter

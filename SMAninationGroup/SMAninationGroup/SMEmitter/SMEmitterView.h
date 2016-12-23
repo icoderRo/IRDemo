@@ -57,45 +57,31 @@ typedef NS_ENUM(NSUInteger, SMEmitterPositionType) {
 @property (nonatomic, strong) NSArray *images;
 
 
-/**
- the position of emitters style
- */
+/// the position of emitters style
 @property (nonatomic, assign) SMEmitterPositionType positionType;
 
 
-/**
- return total emitter count
- */
+///  return total emitter count
 @property (nonatomic, assign, readonly) NSUInteger totalCount;
 
 
-/**
- the emitters size, default is 36
- */
+/// the emitters size, default is 36
 @property (nonatomic, assign) CGSize emitterSize;
 
 
-/**
- delegate: return emitters by self
- */
+///  delegate: return emitters by self
 @property (nonatomic, weak) id<SMEmitterViewDelegate> delegate;
 
 
-/**
- if need pause, then pause animation
- */
+/// if need pause, then pause animation
 - (void)pause;
 
 
-/**
- if pause, then you can resume animation
- */
+/// if paused, then you can resume animation
 - (void)resume;
 
 
-/**
- if need dealloc, then stop
- */
+/// if need dealloc, then stop
 - (void)stop;
 
 @end
