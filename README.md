@@ -13,11 +13,15 @@
 ------------------------------------------------------------------------------------------------
 
 ### SMEmitter演示
-![image](https://github.com/icoderRo/SMAnimationDemo/blob/master/Resource/emitterViewAnimation/emitterView.gif)
-![image](https://github.com/icoderRo/SMAnimationDemo/blob/master/Resource/emitterViewAnimation/emitterViewbg.gif)
-![image](https://github.com/icoderRo/SMAnimationDemo/blob/master/Resource/emitterViewAnimation/emitterView.png)
+![image](https://github.com/icoderRo/SMAnimationDemo/blob/master/Resource/emitterViewAnimation/emitterView.gif)![image](https://github.com/icoderRo/SMAnimationDemo/blob/master/Resource/emitterViewAnimation/emitterViewbg.gif)![image](https://github.com/icoderRo/SMAnimationDemo/blob/master/Resource/emitterViewAnimation/emitterView.png)
 
 #### SMEmitterView Usage
-```
-use : 
+``` Objc
+// 1.create
+SMEmitterView *emitterView = [[SMEmitterView alloc] init];
+emitterView.frame = CGRectMake(10, 120, width, 400);
+[self.view addSubview:emitterView];
+
+// 2. open fire 
+[emitterView fireWithEmitterCount:100];
 ```
