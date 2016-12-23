@@ -13,8 +13,8 @@
 ------------------------------------------------------------------------------------------------
 
 ### SMEmitter演示
-![image](https://github.com/icoderRo/SMAnimationDemo/blob/master/Resource/emitterViewAnimation/emitterView.gif)~
-![image](https://github.com/icoderRo/SMAnimationDemo/blob/master/Resource/emitterViewAnimation/emitterView.png)~
+![image](https://github.com/icoderRo/SMAnimationDemo/blob/master/Resource/emitterViewAnimation/emitterView.gif) 
+![image](https://github.com/icoderRo/SMAnimationDemo/blob/master/Resource/emitterViewAnimation/emitterView1.gif)  
 ![image](https://github.com/icoderRo/SMAnimationDemo/blob/master/Resource/emitterViewAnimation/emitterViewbg.gif)
 
 #### SMEmitterView Usage
