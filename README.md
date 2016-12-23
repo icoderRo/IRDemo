@@ -58,5 +58,8 @@ btn.emitters = @[[UIImage imageWithContentsOfFile:path(@"emitter", @"bundle", @"
 // 2.2 使用SMEffectWare效果, 设置wareType(SMWareLayerCircle,SMWareLayerHeart)类型和颜色
 btn.wareType = SMWareLayerHeart;
 btn.wareColor = [UIColor redColor];
- 
+
+ .
+ .
+ .
 ```
