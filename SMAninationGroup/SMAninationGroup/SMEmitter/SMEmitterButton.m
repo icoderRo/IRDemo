@@ -212,10 +212,10 @@
     scaleAnimation.toValue = @2.2;
     scaleAnimation.duration = duration;
     
-    CABasicAnimation *opacityAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    CAKeyframeAnimation *opacityAnimation = [CAKeyframeAnimation animationWithKeyPath:@"opacity"];
     opacityAnimation.duration = duration;
-    opacityAnimation.fromValue = @0.7;
-    opacityAnimation.toValue = @0;
+    opacityAnimation.values = @[@.0,@0.4,@0.7,@0];
+//    opacityAnimation.toValue = @0;
     
     CAMediaTimingFunction * defaultCurve = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
     CAAnimationGroup * animationGroup = [CAAnimationGroup animation];

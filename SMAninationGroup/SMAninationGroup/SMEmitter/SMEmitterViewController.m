@@ -138,11 +138,11 @@
     {
         SMEmitterButton *btn = [[SMEmitterButton alloc] initWithEffectType:SMEffectWare frame:CGRectMake(300, 553, 40, 40)];
         btn.wareType = SMWareLayerCircle;
-        btn.wareColor = [UIColor yellowColor];
+        btn.wareColor = [UIColor yellowColor] ;
         [btn setBackgroundImage:[self imageWithColor:[UIColor grayColor]] forState:UIControlStateNormal];
-        [btn setBackgroundImage:[self imageWithColor:[UIColor yellowColor]] forState:UIControlStateSelected];
+        [btn setBackgroundImage:[self imageWithColor:[[UIColor yellowColor] colorWithAlphaComponent:0.7]] forState:UIControlStateSelected];
 
-        [btn.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        [btn.titleLabel setFont:[UIFont systemFontOfSize:11]];
         [btn addTarget:self action:@selector(resume:) forControlEvents:UIControlEventTouchUpInside];
         [btn setTitle:@"resume" forState:UIControlStateNormal];
         [self.view addSubview:btn];

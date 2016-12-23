@@ -54,7 +54,7 @@ typedef NS_ENUM(NSUInteger, SMEmitterPositionType) {
 
  images: UIImage array
  */
-@property (nonatomic, strong) NSArray *images;
+@property (nonatomic, strong) NSArray<UIImage *> *images;
 
 
 /// the position of emitters style
