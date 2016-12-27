@@ -12,7 +12,6 @@
 
 #define kScreenW [UIScreen mainScreen].bounds.size.width
 #define KScreenH [UIScreen mainScreen].bounds.size.height
-
 #define path(resurce, type, component) [[[NSBundle mainBundle] pathForResource:resurce ofType:type] stringByAppendingPathComponent:component]
 
 @interface SMEmitterViewController ()<SMEmitterViewDelegate>

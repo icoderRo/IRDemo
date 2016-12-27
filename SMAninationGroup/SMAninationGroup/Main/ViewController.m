@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "SMEmitterViewController.h"
-
+#import "SMDanmakuViewController.h"
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) NSMutableArray *array;
 @property (nonatomic, strong) UITableView *tableView;
@@ -20,12 +20,14 @@
 - (void)viewDidLoad {
     
     self.array = [NSMutableArray array];
-    self.title = @"animationDemo";
-    [self.array addObject:@{ @"SMEmitterViewController" : @"SMEmitterViewController"}];
-    
+    self.title = @"animations";
+    [self.array addObject:@{ @"SMEmitter" : @"SMEmitterViewController"}];
+    [self.array addObject:@{ @"SMDanmaku" : @"SMDanmakuViewController"}];
+
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.rowHeight = 66;
     [self.view addSubview:self.tableView];
 }
 

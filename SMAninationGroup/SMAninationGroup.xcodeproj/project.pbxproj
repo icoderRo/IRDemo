@@ -7,36 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F436F78C1E0A88EA00222286 /* SMEmitterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F436F78B1E0A88EA00222286 /* SMEmitterButton.m */; };
-		F43B38951E0B6A2700112B78 /* emitter.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F43B38941E0B6A2700112B78 /* emitter.bundle */; };
-		F45F778A1E092AD4008AD07E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F45F77891E092AD4008AD07E /* main.m */; };
-		F45F778D1E092AD4008AD07E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F45F778C1E092AD4008AD07E /* AppDelegate.m */; };
-		F45F77901E092AD4008AD07E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F45F778F1E092AD4008AD07E /* ViewController.m */; };
-		F45F77931E092AD4008AD07E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45F77911E092AD4008AD07E /* Main.storyboard */; };
-		F45F77951E092AD4008AD07E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45F77941E092AD4008AD07E /* Assets.xcassets */; };
-		F45F77981E092AD4008AD07E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45F77961E092AD4008AD07E /* LaunchScreen.storyboard */; };
-		F45F77A21E092C93008AD07E /* SMEmitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F45F77A11E092C93008AD07E /* SMEmitterViewController.m */; };
-		F45F77A51E092CA6008AD07E /* SMEmitterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F45F77A41E092CA6008AD07E /* SMEmitterView.m */; };
+		F4F243311E12549C007FEE0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F2431C1E12549C007FEE0D /* AppDelegate.m */; };
+		F4F243321E12549C007FEE0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F2431D1E12549C007FEE0D /* Assets.xcassets */; };
+		F4F243331E12549C007FEE0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F2431E1E12549C007FEE0D /* LaunchScreen.storyboard */; };
+		F4F243341E12549C007FEE0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F243201E12549C007FEE0D /* Main.storyboard */; };
+		F4F243351E12549C007FEE0D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4F243221E12549C007FEE0D /* Info.plist */; };
+		F4F243361E12549C007FEE0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F243231E12549C007FEE0D /* main.m */; };
+		F4F243371E12549C007FEE0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F243251E12549C007FEE0D /* ViewController.m */; };
+		F4F243381E12549C007FEE0D /* SMDanmakuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F243281E12549C007FEE0D /* SMDanmakuViewController.m */; };
+		F4F243391E12549C007FEE0D /* emitter.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F4F2432A1E12549C007FEE0D /* emitter.bundle */; };
+		F4F2433A1E12549C007FEE0D /* SMEmitterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F2432C1E12549C007FEE0D /* SMEmitterButton.m */; };
+		F4F2433B1E12549C007FEE0D /* SMEmitterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F2432E1E12549C007FEE0D /* SMEmitterView.m */; };
+		F4F2433C1E12549C007FEE0D /* SMEmitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F243301E12549C007FEE0D /* SMEmitterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F436F78A1E0A88EA00222286 /* SMEmitterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMEmitterButton.h; sourceTree = "<group>"; };
-		F436F78B1E0A88EA00222286 /* SMEmitterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMEmitterButton.m; sourceTree = "<group>"; };
-		F43B38941E0B6A2700112B78 /* emitter.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = emitter.bundle; sourceTree = "<group>"; };
 		F45F77851E092AD4008AD07E /* SMAninationGroup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMAninationGroup.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F45F77891E092AD4008AD07E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F45F778B1E092AD4008AD07E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F45F778C1E092AD4008AD07E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F45F778E1E092AD4008AD07E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F45F778F1E092AD4008AD07E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F45F77921E092AD4008AD07E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F45F77941E092AD4008AD07E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F45F77971E092AD4008AD07E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F45F77991E092AD4008AD07E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F45F77A01E092C93008AD07E /* SMEmitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMEmitterViewController.h; sourceTree = "<group>"; };
-		F45F77A11E092C93008AD07E /* SMEmitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMEmitterViewController.m; sourceTree = "<group>"; };
-		F45F77A31E092CA6008AD07E /* SMEmitterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMEmitterView.h; sourceTree = "<group>"; };
-		F45F77A41E092CA6008AD07E /* SMEmitterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMEmitterView.m; sourceTree = "<group>"; };
+		F4F2431B1E12549C007FEE0D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F4F2431C1E12549C007FEE0D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F4F2431D1E12549C007FEE0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4F2431F1E12549C007FEE0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F4F243211E12549C007FEE0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4F243221E12549C007FEE0D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4F243231E12549C007FEE0D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F4F243241E12549C007FEE0D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F4F243251E12549C007FEE0D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F4F243271E12549C007FEE0D /* SMDanmakuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMDanmakuViewController.h; sourceTree = "<group>"; };
+		F4F243281E12549C007FEE0D /* SMDanmakuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMDanmakuViewController.m; sourceTree = "<group>"; };
+		F4F2432A1E12549C007FEE0D /* emitter.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = emitter.bundle; sourceTree = "<group>"; };
+		F4F2432B1E12549C007FEE0D /* SMEmitterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMEmitterButton.h; sourceTree = "<group>"; };
+		F4F2432C1E12549C007FEE0D /* SMEmitterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMEmitterButton.m; sourceTree = "<group>"; };
+		F4F2432D1E12549C007FEE0D /* SMEmitterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMEmitterView.h; sourceTree = "<group>"; };
+		F4F2432E1E12549C007FEE0D /* SMEmitterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMEmitterView.m; sourceTree = "<group>"; };
+		F4F2432F1E12549C007FEE0D /* SMEmitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMEmitterViewController.h; sourceTree = "<group>"; };
+		F4F243301E12549C007FEE0D /* SMEmitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMEmitterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +57,7 @@
 		F45F777C1E092AD4008AD07E = {
 			isa = PBXGroup;
 			children = (
-				F45F77871E092AD4008AD07E /* SMAninationGroup */,
+				F4F243191E12549C007FEE0D /* SMAninationGroup */,
 				F45F77861E092AD4008AD07E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,41 +70,51 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F45F77871E092AD4008AD07E /* SMAninationGroup */ = {
+		F4F243191E12549C007FEE0D /* SMAninationGroup */ = {
 			isa = PBXGroup;
 			children = (
-				F45F778B1E092AD4008AD07E /* AppDelegate.h */,
-				F45F778C1E092AD4008AD07E /* AppDelegate.m */,
-				F45F778E1E092AD4008AD07E /* ViewController.h */,
-				F45F778F1E092AD4008AD07E /* ViewController.m */,
-				F45F77911E092AD4008AD07E /* Main.storyboard */,
-				F45F77941E092AD4008AD07E /* Assets.xcassets */,
-				F45F77961E092AD4008AD07E /* LaunchScreen.storyboard */,
-				F45F77991E092AD4008AD07E /* Info.plist */,
-				F45F779F1E092B2B008AD07E /* SMEmitter */,
-				F45F77881E092AD4008AD07E /* Supporting Files */,
+				F4F2431A1E12549C007FEE0D /* Main */,
+				F4F243261E12549C007FEE0D /* SMDanmaku */,
+				F4F243291E12549C007FEE0D /* SMEmitter */,
 			);
 			path = SMAninationGroup;
 			sourceTree = "<group>";
 		};
-		F45F77881E092AD4008AD07E /* Supporting Files */ = {
+		F4F2431A1E12549C007FEE0D /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				F45F77891E092AD4008AD07E /* main.m */,
+				F4F2431B1E12549C007FEE0D /* AppDelegate.h */,
+				F4F2431C1E12549C007FEE0D /* AppDelegate.m */,
+				F4F243241E12549C007FEE0D /* ViewController.h */,
+				F4F243251E12549C007FEE0D /* ViewController.m */,
+				F4F243231E12549C007FEE0D /* main.m */,
+				F4F243221E12549C007FEE0D /* Info.plist */,
+				F4F243201E12549C007FEE0D /* Main.storyboard */,
+				F4F2431E1E12549C007FEE0D /* LaunchScreen.storyboard */,
+				F4F2431D1E12549C007FEE0D /* Assets.xcassets */,
 			);
-			name = "Supporting Files";
+			path = Main;
 			sourceTree = "<group>";
 		};
-		F45F779F1E092B2B008AD07E /* SMEmitter */ = {
+		F4F243261E12549C007FEE0D /* SMDanmaku */ = {
 			isa = PBXGroup;
 			children = (
-				F45F77A01E092C93008AD07E /* SMEmitterViewController.h */,
-				F45F77A11E092C93008AD07E /* SMEmitterViewController.m */,
-				F45F77A31E092CA6008AD07E /* SMEmitterView.h */,
-				F45F77A41E092CA6008AD07E /* SMEmitterView.m */,
-				F436F78A1E0A88EA00222286 /* SMEmitterButton.h */,
-				F436F78B1E0A88EA00222286 /* SMEmitterButton.m */,
-				F43B38941E0B6A2700112B78 /* emitter.bundle */,
+				F4F243271E12549C007FEE0D /* SMDanmakuViewController.h */,
+				F4F243281E12549C007FEE0D /* SMDanmakuViewController.m */,
+			);
+			path = SMDanmaku;
+			sourceTree = "<group>";
+		};
+		F4F243291E12549C007FEE0D /* SMEmitter */ = {
+			isa = PBXGroup;
+			children = (
+				F4F2432F1E12549C007FEE0D /* SMEmitterViewController.h */,
+				F4F243301E12549C007FEE0D /* SMEmitterViewController.m */,
+				F4F2432D1E12549C007FEE0D /* SMEmitterView.h */,
+				F4F2432E1E12549C007FEE0D /* SMEmitterView.m */,
+				F4F2432B1E12549C007FEE0D /* SMEmitterButton.h */,
+				F4F2432C1E12549C007FEE0D /* SMEmitterButton.m */,
+				F4F2432A1E12549C007FEE0D /* emitter.bundle */,
 			);
 			path = SMEmitter;
 			sourceTree = "<group>";
@@ -164,10 +178,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F43B38951E0B6A2700112B78 /* emitter.bundle in Resources */,
-				F45F77981E092AD4008AD07E /* LaunchScreen.storyboard in Resources */,
-				F45F77951E092AD4008AD07E /* Assets.xcassets in Resources */,
-				F45F77931E092AD4008AD07E /* Main.storyboard in Resources */,
+				F4F243351E12549C007FEE0D /* Info.plist in Resources */,
+				F4F243341E12549C007FEE0D /* Main.storyboard in Resources */,
+				F4F243321E12549C007FEE0D /* Assets.xcassets in Resources */,
+				F4F243331E12549C007FEE0D /* LaunchScreen.storyboard in Resources */,
+				F4F243391E12549C007FEE0D /* emitter.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,32 +193,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F45F77901E092AD4008AD07E /* ViewController.m in Sources */,
-				F45F77A21E092C93008AD07E /* SMEmitterViewController.m in Sources */,
-				F45F77A51E092CA6008AD07E /* SMEmitterView.m in Sources */,
-				F45F778D1E092AD4008AD07E /* AppDelegate.m in Sources */,
-				F436F78C1E0A88EA00222286 /* SMEmitterButton.m in Sources */,
-				F45F778A1E092AD4008AD07E /* main.m in Sources */,
+				F4F243381E12549C007FEE0D /* SMDanmakuViewController.m in Sources */,
+				F4F2433C1E12549C007FEE0D /* SMEmitterViewController.m in Sources */,
+				F4F2433A1E12549C007FEE0D /* SMEmitterButton.m in Sources */,
+				F4F243371E12549C007FEE0D /* ViewController.m in Sources */,
+				F4F243361E12549C007FEE0D /* main.m in Sources */,
+				F4F243311E12549C007FEE0D /* AppDelegate.m in Sources */,
+				F4F2433B1E12549C007FEE0D /* SMEmitterView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F45F77911E092AD4008AD07E /* Main.storyboard */ = {
+		F4F2431E1E12549C007FEE0D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F45F77921E092AD4008AD07E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F45F77961E092AD4008AD07E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F45F77971E092AD4008AD07E /* Base */,
+				F4F2431F1E12549C007FEE0D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F4F243201E12549C007FEE0D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4F243211E12549C007FEE0D /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -302,7 +318,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 38QS4M9J37;
-				INFOPLIST_FILE = SMAninationGroup/Info.plist;
+				INFOPLIST_FILE = SMAninationGroup/Main/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.icoderRo.github.com.SMAninationGroup;
@@ -315,7 +331,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 38QS4M9J37;
-				INFOPLIST_FILE = SMAninationGroup/Info.plist;
+				INFOPLIST_FILE = SMAninationGroup/Main/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.icoderRo.github.com.SMAninationGroup;
