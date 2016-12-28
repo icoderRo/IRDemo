@@ -2,7 +2,7 @@
 //  main.m
 //  SMAninationGroup
 //
-//  Created by simon on 16/12/20  <https://github.com/icoderRo/SMAnimationDemo>0.
+//  Created by simon on 16/12/20  <https://github.com/icoderRo/SMAnimation>0.
 //  Copyright © 2016年 simon. All rights reserved.
 //
 
