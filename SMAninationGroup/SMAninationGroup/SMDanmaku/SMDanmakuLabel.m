@@ -30,10 +30,26 @@ NSString *const SMTextAttachmentToken = @"\uFFFC";
     
     // calculate
     NSArray *lines = (NSArray *)CTFrameGetLines(frame);
-    CGPoint lineOrigins[[lines count]];
+    CGPoint lineOrigins[lines.count];
     CTFrameGetLineOrigins(frame, CFRangeMake(0, 0), lineOrigins);
     
-    // get the image...
+    for (int i = 0; i < lines.count; ++i) {
+        CTLineRef line = (__bridge CTLineRef)lines[i];
+        
+        for (id obj in (NSArray *)CTLineGetGlyphRuns(line)) {
+            CTRunRef run = (__bridge CTRunRef)obj;
+            NSDictionary *runAtt = (NSDictionary *)CTRunGetAttributes(run);
+            CTRunDelegateRef delegate = (__bridge CTRunDelegateRef)[runAtt valueForKey:(id)kCTRunDelegateAttributeName];
+            if (delegate == nil) continue; // if not image continue
+            
+            NSDictionary *dict = CTRunDelegateGetRefCon(delegate);
+            if (![dict isKindOfClass:[NSDictionary class]]) continue; // if not set class continue
+            
+            
+            
+        }
+        
+    }
     
     
     CFRelease(framesetter);
