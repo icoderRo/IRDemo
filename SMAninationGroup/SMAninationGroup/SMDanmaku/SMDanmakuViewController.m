@@ -24,14 +24,18 @@
     imageView.userInteractionEnabled = YES;
     self.view = imageView;
 }
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     SMDanmakuLabel *label = [[SMDanmakuLabel alloc] initWithFrame:CGRectMake(100, 200, 200, 100)];
-    NSTextAttachment *attachment = [[NSTextAttachment alloc]init];
-    attachment.image = [UIImage imageWithContentsOfFile:path(@"emitter", @"bundle", @"Sparkle1")];
-    NSMutableAttributedString  *text = [[NSMutableAttributedString alloc]initWithString:@"弹幕图文测试"];
-    [text insertAttributedString:[NSAttributedString attributedStringWithAttachment:attachment] atIndex:0];
+    UIFont *font = [UIFont systemFontOfSize:22];
+    
+    UIImage *img = [UIImage imageWithContentsOfFile:path(@"emitter", @"bundle", @"Sparkle1")];
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc]initWithString:@"弹幕图文测试"];
+    NSMutableAttributedString *attachmentStr = [NSMutableAttributedString attachmentStringWithImage:img size:CGSizeMake(30, 30) font:font];
+    [text appendAttributedString:attachmentStr];
     
     label.attributedText = text;
     label.backgroundColor = [UIColor whiteColor];
