@@ -36,7 +36,7 @@
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc]initWithString:@"弹幕图文测试"];
     NSMutableAttributedString *attachmentStr = [NSMutableAttributedString attachmentStringWithImage:img size:CGSizeMake(30, 30) font:font];
     [text appendAttributedString:attachmentStr];
-    
+    [text appendAttributedString:text];
     label.attributedText = text;
     label.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:label];
