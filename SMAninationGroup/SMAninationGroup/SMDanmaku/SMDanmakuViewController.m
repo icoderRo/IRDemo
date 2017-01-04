@@ -8,39 +8,46 @@
 //
 
 #import "SMDanmakuViewController.h"
-#import "SMDanmakuLabel.h"
-
-#define kScreenW [UIScreen mainScreen].bounds.size.width
-#define KScreenH [UIScreen mainScreen].bounds.size.height
+#import "SMDanmakuView.h"
+#define SMRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+#define SMRandColor SMRGBColor(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))
 #define path(resurce, type, component) [[[NSBundle mainBundle] pathForResource:resurce ofType:type] stringByAppendingPathComponent:component]
 
 @interface SMDanmakuViewController ()
-
+@property (nonatomic, weak) SMDanmakuView *danmakuView;
 @end
 
 @implementation SMDanmakuViewController
-- (void)loadView {
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"camera_blur_0"]];
-    imageView.userInteractionEnabled = YES;
-    self.view = imageView;
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    SMDanmakuLabel *label = [[SMDanmakuLabel alloc] initWithFrame:CGRectMake(100, 200, 200, 100)];
-    UIFont *font = [UIFont systemFontOfSize:22];
+    SMDanmakuView *View = [[SMDanmakuView alloc] initWithFrame:CGRectMake(10, 74, kScreenW - 20, 400)];
+    View.layer.cornerRadius = 5;
+    View.layer.masksToBounds = YES;
+    View.danmakuBackgroundColor = SMRandColor;
+    [self.view addSubview:View];
+    _danmakuView = View;
     
-    UIImage *img = [UIImage imageWithContentsOfFile:path(@"emitter", @"bundle", @"Sparkle1")];
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenW * 0.3, 500, 100, 70)];
+    [btn.titleLabel setFont:[UIFont systemFontOfSize:22]];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(fire:) forControlEvents:UIControlEventTouchUpInside];
+    [btn setTitle:@"fire" forState:UIControlStateNormal];
+    [self.view addSubview:btn];
+}
+
+- (void)fire:(UIButton *)btn {
+    UIFont *font = [UIFont systemFontOfSize:25];
+    UIImage *img = [UIImage imageNamed:@"fa-link"];
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc]initWithString:@"弹幕图文测试"];
     NSMutableAttributedString *attachmentStr = [NSMutableAttributedString attachmentStringWithImage:img size:CGSizeMake(30, 30) font:font];
     [text appendAttributedString:attachmentStr];
-    [text appendAttributedString:text];
-    label.attributedText = text;
-    label.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:label];
-
+    
+    [text setFont:[UIFont systemFontOfSize:20] range:NSMakeRange(0, text.length)];
+    [text setTextColor:[UIColor redColor] range:NSMakeRange(0, text.length)];
+    
+    [self.danmakuView fireWithAttributedText:text];
 }
 
 

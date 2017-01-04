@@ -1,29 +1,71 @@
 //
-//  SMDanmakuLabel.m
+//  SMDanmakuView.m
 //  SMAninationGroup
 //
-//  Created by simon on 16/12/27.
-//  Copyright © 2016年 simon. All rights reserved.
+//  Created by simon on 17/1/3.
+//  Copyright © 2017年 simon. All rights reserved.
 //
 
-#import "SMDanmakuLabel.h"
+#import "SMDanmakuView.h"
 
 NSString *const SMTextAttachmentAttributeName = @"SMTextAttachment";
 NSString *const SMTextAttachmentToken = @"\uFFFC";
 
+@implementation SMDanmakuView
 
+- (void)setBackgroundImage:(UIImage *)backgroundImage {
+    if (!backgroundImage) return;
+    
+    _backgroundImage = backgroundImage;
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:backgroundImage];
+    imageView.userInteractionEnabled = YES;
+    [self addSubview:imageView];
+}
 
+- (void)fireWithAttributedText:(NSMutableAttributedString *)attributedText {
+    if (attributedText.length <= 0) return;
 
-@implementation SMDanmakuLabel
+    SMDanmakuLayer *layer = [[SMDanmakuLayer alloc] init];
+    // TODO:
+    layer.frame = CGRectMake(0, 0, 200, 40);
+//    layer.backgroundColor = _danmakuBackgroundColor.CGColor;
+//    layer.backgroundColor = (__bridge CGColorRef _Nullable)([UIColor colorWithPatternImage:[UIImage imageNamed:@"btn_action"]]);
+    layer.attributedText = attributedText.mutableCopy;
+    [layer setNeedsDisplay];
+    [self.layer addSublayer:layer];
+}
 
-- (void)drawRect:(CGRect)rect {
+@end
+
+@implementation SMDanmakuLayer
+- (instancetype)init {
+    if (self = [super init]) {
+        static CGFloat scale;
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            scale = [UIScreen mainScreen].scale;
+        });
+        self.contentsScale = scale;
+    }
+    return self;
+}
+
+- (void)setNeedsDisplay {
+    [self display];
+}
+
+- (void)display {
+    
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque, self.contentsScale);
+    
+    CGRect rect = self.bounds;
     
     // transform
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextTranslateCTM(context, 0, self.bounds.size.height);
     CGContextScaleCTM(context, 1.0, -1.0);
     CGContextSetTextMatrix(context, CGAffineTransformIdentity);
-    
+    CGContextDrawImage(context, rect, [UIImage imageNamed:@"btn_action"].CGImage);
     // frame
     CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)_attributedText);
     CGMutablePathRef path = CGPathCreateMutable();
@@ -70,6 +112,11 @@ NSString *const SMTextAttachmentToken = @"\uFFFC";
     CFRelease(framesetter);
     CFRelease(path);
     CFRelease(frame);
+    
+
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.contents = (__bridge id)(image.CGImage);
 }
 
 @end
@@ -104,6 +151,14 @@ NSString *const SMTextAttachmentToken = @"\uFFFC";
 }
 
 #pragma mark - Attribute
+- (void)setFont:(UIFont *)font range:(NSRange)range {
+    [self setAttribute:NSFontAttributeName value:font range:range];
+}
+
+- (void)setTextColor:(UIColor *)textColor range:(NSRange)range {
+    [self setAttribute:NSForegroundColorAttributeName value:textColor range:range];
+}
+
 - (void)setRunDelegate:(CTRunDelegateRef)runDelegate range:(NSRange)range {
     [self setAttribute:(id)kCTRunDelegateAttributeName value:(__bridge id)runDelegate range:range];
 }
@@ -185,5 +240,4 @@ static CGFloat GetWidthCallback(void *ref) {
     
     return delegate;
 }
-
 @end
