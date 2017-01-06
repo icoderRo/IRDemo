@@ -16,12 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SMDanmakuView : UIView
 @property (nullable, nonatomic, strong) UIImage *backgroundImage;
 @property (nullable, nonatomic, strong) UIColor *danmakuBackgroundColor;
+@property (nullable, nonatomic, strong) UIImage *danmakuBackgroundImage;
 
 - (void)fireWithAttributedText:(NSMutableAttributedString *)attributedText;
 @end
 
 @interface SMDanmakuLayer : CALayer
 @property (nonatomic, copy) NSMutableAttributedString *attributedText;
+@property (nullable, nonatomic, strong) UIImage *backgroundImage;
 @end
 
 @interface NSMutableAttributedString (SMDanmakuText)

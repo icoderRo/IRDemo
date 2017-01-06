@@ -25,7 +25,8 @@
     SMDanmakuView *View = [[SMDanmakuView alloc] initWithFrame:CGRectMake(10, 74, kScreenW - 20, 400)];
     View.layer.cornerRadius = 5;
     View.layer.masksToBounds = YES;
-    View.danmakuBackgroundColor = SMRandColor;
+    View.backgroundImage = [UIImage imageNamed:@"camera_blur_0"];
+    View.danmakuBackgroundImage = [UIImage imageWithContentsOfFile:path(@"SMDanmaku", @"bundle", @"landscape_liuguang_blue")];
     [self.view addSubview:View];
     _danmakuView = View;
     
@@ -38,17 +39,33 @@
 }
 
 - (void)fire:(UIButton *)btn {
-    UIFont *font = [UIFont systemFontOfSize:25];
+    UIFont *font = [UIFont systemFontOfSize:17];
     UIImage *img = [UIImage imageNamed:@"fa-link"];
+    
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc]initWithString:@"弹幕图文测试"];
     NSMutableAttributedString *attachmentStr = [NSMutableAttributedString attachmentStringWithImage:img size:CGSizeMake(30, 30) font:font];
-    [text appendAttributedString:attachmentStr];
     
-    [text setFont:[UIFont systemFontOfSize:20] range:NSMakeRange(0, text.length)];
-    [text setTextColor:[UIColor redColor] range:NSMakeRange(0, text.length)];
+
+    NSMutableAttributedString *sendStr = [[NSMutableAttributedString alloc] init];
     
-    [self.danmakuView fireWithAttributedText:text];
+    [sendStr appendAttributedString:attachmentStr];
+    [sendStr appendAttributedString:text];
+    
+    [sendStr setFont:[UIFont systemFontOfSize:15] range:NSMakeRange(0, sendStr.length)];
+    [sendStr setTextColor:[UIColor blueColor] range:NSMakeRange(0, sendStr.length)];
+    
+    NSUInteger location = sendStr.length;
+    
+    [sendStr appendAttributedString:attachmentStr];
+    [sendStr appendAttributedString:text];
+    
+    [sendStr setFont:font range:NSMakeRange(0, sendStr.length)];
+    [sendStr setTextColor:[UIColor whiteColor] range:NSMakeRange(location, sendStr.length - location)];
+    
+    [sendStr appendAttributedString:attachmentStr];
+    [sendStr appendAttributedString:text];
+    [sendStr appendAttributedString:attachmentStr];
+    [sendStr appendAttributedString:text];
+    [self.danmakuView fireWithAttributedText:sendStr];
 }
-
-
 @end

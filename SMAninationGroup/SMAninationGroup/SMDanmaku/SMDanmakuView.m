@@ -11,6 +11,9 @@
 NSString *const SMTextAttachmentAttributeName = @"SMTextAttachment";
 NSString *const SMTextAttachmentToken = @"\uFFFC";
 
+#warning 后面提供接口, 自行设置
+CGFloat const margin = 10;
+
 @implementation SMDanmakuView
 
 - (void)setBackgroundImage:(UIImage *)backgroundImage {
@@ -24,12 +27,12 @@ NSString *const SMTextAttachmentToken = @"\uFFFC";
 
 - (void)fireWithAttributedText:(NSMutableAttributedString *)attributedText {
     if (attributedText.length <= 0) return;
-
+    
     SMDanmakuLayer *layer = [[SMDanmakuLayer alloc] init];
     // TODO:
-    layer.frame = CGRectMake(0, 0, 200, 40);
-//    layer.backgroundColor = _danmakuBackgroundColor.CGColor;
-//    layer.backgroundColor = (__bridge CGColorRef _Nullable)([UIColor colorWithPatternImage:[UIImage imageNamed:@"btn_action"]]);
+    layer.frame = CGRectMake(0, 0, 500, 100);
+    layer.backgroundColor = [UIColor redColor].CGColor;
+    layer.backgroundImage = _danmakuBackgroundImage;
     layer.attributedText = attributedText.mutableCopy;
     [layer setNeedsDisplay];
     [self.layer addSublayer:layer];
@@ -56,21 +59,53 @@ NSString *const SMTextAttachmentToken = @"\uFFFC";
 
 - (void)display {
     
-    UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque, self.contentsScale);
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size , self.opaque, self.contentsScale);
     
-    CGRect rect = self.bounds;
-    
-    // transform
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextTranslateCTM(context, 0, self.bounds.size.height);
     CGContextScaleCTM(context, 1.0, -1.0);
     CGContextSetTextMatrix(context, CGAffineTransformIdentity);
-    CGContextDrawImage(context, rect, [UIImage imageNamed:@"btn_action"].CGImage);
-    // frame
+    
+    CGSize suggestSize;
     CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)_attributedText);
+    
+    CGFloat width = self.bounds.size.width;
+    CGFloat height = self.bounds.size.height;
+    // 横屏不对
+    if (width > kScreenW) width = kScreenW;
+    CGSize constraints = CGSizeMake(ceil(width), ceil(height));
+    {
+        CGRect rect = {self.bounds.origin, constraints};
+        CGMutablePathRef path = CGPathCreateMutable();
+        CGPathAddRect(path, NULL, rect);
+        CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), path, NULL);
+        
+        CFArrayRef lines = CTFrameGetLines(frame);
+        CTLineRef line = CFArrayGetValueAtIndex(lines, 1);
+        CFRange range = CTLineGetStringRange(line);
+        
+        
+        suggestSize = CTFramesetterSuggestFrameSizeWithConstraints(framesetter, range, NULL, constraints, NULL);
+        CFRelease(path);
+        CFRelease(frame);
+    }
+    
     CGMutablePathRef path = CGPathCreateMutable();
+    CGRect rect = {self.bounds.origin, suggestSize};
+    NSLog(@"%@", NSStringFromCGRect(rect));
     CGPathAddRect(path, NULL, rect);
     CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), path, NULL);
+    
+    
+    
+    // transform
+    
+    
+    CGRect backgroundRect = rect;
+    //    backgroundRect.origin.x += 20;
+    //    backgroundRect.size.width -= 20;
+    CGContextDrawImage(context, backgroundRect, _backgroundImage.CGImage);
+    
     CTFrameDraw(frame, context);
     
     // calculate
@@ -93,11 +128,11 @@ NSString *const SMTextAttachmentToken = @"\uFFFC";
             // calculate bounds
             CGFloat ascent, descent;
             CGRect runBounds;
-            runBounds.size.width = CTRunGetTypographicBounds(run, CFRangeMake(0, 0), &ascent, &descent, NULL);
+            runBounds.size.width = CTRunGetTypographicBounds(run, CFRangeMake(0, 0), &ascent, &descent, NULL) - margin;
             runBounds.size.height = ascent + descent;
             
             CGFloat offsetX = CTLineGetOffsetForStringIndex(line, CTRunGetStringRange(run).location, NULL);
-            runBounds.origin.x = lineOrigins[i].x + offsetX;
+            runBounds.origin.x = lineOrigins[i].x + offsetX + margin * 0.5;
             runBounds.origin.y = lineOrigins[i].y -  descent;
             
             CGPathRef pathRef = CTFrameGetPath(frame);
@@ -113,7 +148,7 @@ NSString *const SMTextAttachmentToken = @"\uFFFC";
     CFRelease(path);
     CFRelease(frame);
     
-
+    
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     self.contents = (__bridge id)(image.CGImage);
@@ -122,6 +157,10 @@ NSString *const SMTextAttachmentToken = @"\uFFFC";
 @end
 
 @implementation NSMutableAttributedString (SMDanmakuText)
+
+//+ (NSMutableAttributedString *)backgroupImageStringWithImage:(UIImage *)image {
+//
+//}
 
 + (NSMutableAttributedString *)attachmentStringWithImage:(UIImage *)image size:(CGSize)size font:(UIFont *)font {
     
@@ -134,7 +173,7 @@ NSString *const SMTextAttachmentToken = @"\uFFFC";
     
     CGFloat ascent = size.height * 0.5 + offsetY;
     CGFloat descent = size.height - ascent;
-    CGFloat width = size.width;
+    CGFloat width = size.width + margin;
     
     SMTextRunDelegate *delegate = [[SMTextRunDelegate alloc] init];
     delegate.width = width;
