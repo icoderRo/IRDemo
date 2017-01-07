@@ -66,3 +66,5 @@ btn.wareColor = [UIColor redColor];
 ##### 后续会新增各类型的动画, 有需要的小伙伴可以持续关注.
 
 ##### LICENSE - "MIT License"
+
+##### 赶项目, 对于弹幕的封装会慢一点完成
