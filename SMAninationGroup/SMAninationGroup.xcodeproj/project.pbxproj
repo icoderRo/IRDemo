@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F465E6BB1E1B5349003679B9 /* SMDanmakuView.m in Sources */ = {isa = PBXBuildFile; fileRef = F465E6BA1E1B5349003679B9 /* SMDanmakuView.m */; };
 		F465E6CC1E1CA3EB003679B9 /* SMDanmaku.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F465E6CB1E1CA3EB003679B9 /* SMDanmaku.bundle */; };
+		F47DB7261E2783F9003D34C7 /* SMCompressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47DB7251E2783F9003D34C7 /* SMCompressViewController.m */; };
 		F4F243311E12549C007FEE0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F2431C1E12549C007FEE0D /* AppDelegate.m */; };
 		F4F243321E12549C007FEE0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F2431D1E12549C007FEE0D /* Assets.xcassets */; };
 		F4F243331E12549C007FEE0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F2431E1E12549C007FEE0D /* LaunchScreen.storyboard */; };
@@ -28,6 +29,8 @@
 		F465E6B91E1B5349003679B9 /* SMDanmakuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMDanmakuView.h; sourceTree = "<group>"; };
 		F465E6BA1E1B5349003679B9 /* SMDanmakuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMDanmakuView.m; sourceTree = "<group>"; };
 		F465E6CB1E1CA3EB003679B9 /* SMDanmaku.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SMDanmaku.bundle; sourceTree = "<group>"; };
+		F47DB7241E2783F9003D34C7 /* SMCompressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCompressViewController.h; sourceTree = "<group>"; };
+		F47DB7251E2783F9003D34C7 /* SMCompressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMCompressViewController.m; sourceTree = "<group>"; };
 		F4F2431B1E12549C007FEE0D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F4F2431C1E12549C007FEE0D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F4F2431D1E12549C007FEE0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,10 +78,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F47DB7231E2783CB003D34C7 /* SMCompressVideoToMP4 */ = {
+			isa = PBXGroup;
+			children = (
+				F47DB7241E2783F9003D34C7 /* SMCompressViewController.h */,
+				F47DB7251E2783F9003D34C7 /* SMCompressViewController.m */,
+			);
+			path = SMCompressVideoToMP4;
+			sourceTree = "<group>";
+		};
 		F4F243191E12549C007FEE0D /* SMAninationGroup */ = {
 			isa = PBXGroup;
 			children = (
 				F4F2431A1E12549C007FEE0D /* Main */,
+				F47DB7231E2783CB003D34C7 /* SMCompressVideoToMP4 */,
 				F4F243261E12549C007FEE0D /* SMDanmaku */,
 				F4F243291E12549C007FEE0D /* SMEmitter */,
 			);
@@ -202,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47DB7261E2783F9003D34C7 /* SMCompressViewController.m in Sources */,
 				F4F243381E12549C007FEE0D /* SMDanmakuViewController.m in Sources */,
 				F4F2433C1E12549C007FEE0D /* SMEmitterViewController.m in Sources */,
 				F4F2433A1E12549C007FEE0D /* SMEmitterButton.m in Sources */,

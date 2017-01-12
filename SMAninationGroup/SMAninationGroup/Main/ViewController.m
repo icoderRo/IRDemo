@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "SMEmitterViewController.h"
 #import "SMDanmakuViewController.h"
+#import "SMCompressViewController.h"
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) NSMutableArray *array;
 @property (nonatomic, strong) UITableView *tableView;
@@ -23,7 +24,8 @@
     self.title = @"animations";
     [self.array addObject:@{ @"SMEmitter" : @"SMEmitterViewController"}];
     [self.array addObject:@{ @"SMDanmaku" : @"SMDanmakuViewController"}];
-
+    [self.array addObject:@{ @"SMCompress" : @"SMCompressViewController"}];
+    
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
