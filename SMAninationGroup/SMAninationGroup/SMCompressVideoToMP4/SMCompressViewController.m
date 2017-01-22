@@ -8,8 +8,7 @@
 
 #import "SMCompressViewController.h"
 #import <AVFoundation/AVFoundation.h>
-
-
+/// 压缩为MP4
 typedef NS_ENUM(NSUInteger, viedoQuality) {
     viedoQualityLow,
     viedoQualityMedium,
@@ -31,6 +30,49 @@ typedef NS_ENUM(NSUInteger, viedoQuality) {
     ipc.delegate = self;
 }
 
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    NSURL *sourceURL = [info objectForKey:UIImagePickerControllerMediaURL];
+    
+    NSLog(@"原视频时间 %@",[NSString stringWithFormat:@"%f s", [self getVideoSecond:sourceURL]]);
+    NSLog(@"原视频大小 %@", [NSString stringWithFormat:@"%.2f kb", [self getFileSize:[sourceURL path]]]);
+    
+    
+    [self compressVideo:sourceURL Quality:viedoQualityMedium success:^(NSURL *url) {
+        NSLog(@"压缩后视频时间 %@",[NSString stringWithFormat:@"%f s", [self getVideoSecond:url]]);
+        NSLog(@"压缩后视频大小 %@", [NSString stringWithFormat:@"%.2f kb", [self getFileSize:[url path]]]);
+
+    } failure:^(NSString *error) {
+        NSLog(@"%@", error);
+    }];
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (CGFloat) getFileSize:(NSString *)path
+{
+    NSLog(@"%@",path);
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    float filesize = -1.0;
+    if ([fileManager fileExistsAtPath:path]) {
+        NSDictionary *fileDic = [fileManager attributesOfItemAtPath:path error:nil];        unsigned long long size = [[fileDic objectForKey:NSFileSize] longLongValue];
+        filesize = 1.0*size/1024;
+    }else{
+        NSLog(@"找不到文件");
+    }
+    return filesize; // KB。
+}
+
+
+- (CGFloat) getVideoSecond:(NSURL *)URL
+{
+    
+    AVURLAsset *avUrl = [AVURLAsset assetWithURL:URL];
+    CMTime time = [avUrl duration];
+    int second = ceil(time.value/time.timescale);
+    return second;
+}
 
 - (void)compressVideo:(NSURL *)inputURL Quality:(viedoQuality)quality success:(void (^)(NSURL *))success failure:(void (^)(NSString *))failure {
     
@@ -48,8 +90,8 @@ typedef NS_ENUM(NSUInteger, viedoQuality) {
         default:
             break;
     }
-    
-    NSString *tempFilePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"compressVideo.mp4"] ;
+    NSDateFormatter *formater = [[NSDateFormatter alloc] init];    [formater setDateFormat:@"yyyy-MM-dd-HH:mm:ss"];
+    NSString *tempFilePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:[NSString stringWithFormat:@"compressVideo%@.mp4", [formater stringFromDate:[NSDate date]]]];
     
     NSURL *savePathURL = [NSURL fileURLWithPath:tempFilePath];
     AVURLAsset *sourceAsset = [AVURLAsset URLAssetWithURL:inputURL options:kNilOptions];
@@ -84,10 +126,6 @@ typedef NS_ENUM(NSUInteger, viedoQuality) {
             }
         });
     }];
-    
-    
-    
-    
 }
 
 @end

@@ -62,6 +62,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F44E466E1E34803000CBAAC6 /* SMVideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SMVideoPlayer;
+			sourceTree = "<group>";
+		};
 		F45F777C1E092AD4008AD07E = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				F4F2431A1E12549C007FEE0D /* Main */,
+				F44E466E1E34803000CBAAC6 /* SMVideoPlayer */,
 				F47DB7231E2783CB003D34C7 /* SMCompressVideoToMP4 */,
 				F4F243261E12549C007FEE0D /* SMDanmaku */,
 				F4F243291E12549C007FEE0D /* SMEmitter */,
