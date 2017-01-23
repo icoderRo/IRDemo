@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4171E241E35A9A800D2D66E /* SMAVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4171E231E35A9A800D2D66E /* SMAVPlayerViewController.m */; };
 		F465E6BB1E1B5349003679B9 /* SMDanmakuView.m in Sources */ = {isa = PBXBuildFile; fileRef = F465E6BA1E1B5349003679B9 /* SMDanmakuView.m */; };
 		F465E6CC1E1CA3EB003679B9 /* SMDanmaku.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F465E6CB1E1CA3EB003679B9 /* SMDanmaku.bundle */; };
 		F47DB7261E2783F9003D34C7 /* SMCompressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47DB7251E2783F9003D34C7 /* SMCompressViewController.m */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F4171E221E35A9A800D2D66E /* SMAVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAVPlayerViewController.h; sourceTree = "<group>"; };
+		F4171E231E35A9A800D2D66E /* SMAVPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMAVPlayerViewController.m; sourceTree = "<group>"; };
 		F45F77851E092AD4008AD07E /* SMAninationGroup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMAninationGroup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F465E6B91E1B5349003679B9 /* SMDanmakuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMDanmakuView.h; sourceTree = "<group>"; };
 		F465E6BA1E1B5349003679B9 /* SMDanmakuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMDanmakuView.m; sourceTree = "<group>"; };
@@ -65,6 +68,8 @@
 		F44E466E1E34803000CBAAC6 /* SMVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				F4171E221E35A9A800D2D66E /* SMAVPlayerViewController.h */,
+				F4171E231E35A9A800D2D66E /* SMAVPlayerViewController.m */,
 			);
 			path = SMVideoPlayer;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 				F4F2433A1E12549C007FEE0D /* SMEmitterButton.m in Sources */,
 				F4F243371E12549C007FEE0D /* ViewController.m in Sources */,
 				F4F243361E12549C007FEE0D /* main.m in Sources */,
+				F4171E241E35A9A800D2D66E /* SMAVPlayerViewController.m in Sources */,
 				F4F243311E12549C007FEE0D /* AppDelegate.m in Sources */,
 				F465E6BB1E1B5349003679B9 /* SMDanmakuView.m in Sources */,
 				F4F2433B1E12549C007FEE0D /* SMEmitterView.m in Sources */,

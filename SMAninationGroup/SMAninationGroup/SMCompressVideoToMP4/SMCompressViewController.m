@@ -24,6 +24,8 @@ typedef NS_ENUM(NSUInteger, viedoQuality) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    return;
+    
     UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
     ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;    NSArray *availableMedia = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];    ipc.mediaTypes = [NSArray arrayWithObject:availableMedia[1]];
     [self presentViewController:ipc animated:YES completion:nil];

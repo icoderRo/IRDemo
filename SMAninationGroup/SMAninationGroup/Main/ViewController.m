@@ -10,6 +10,7 @@
 #import "SMEmitterViewController.h"
 #import "SMDanmakuViewController.h"
 #import "SMCompressViewController.h"
+#import "SMAVPlayerViewController.h"
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) NSMutableArray *array;
 @property (nonatomic, strong) UITableView *tableView;
@@ -25,6 +26,7 @@
     [self.array addObject:@{ @"SMEmitter" : @"SMEmitterViewController"}];
     [self.array addObject:@{ @"SMDanmaku" : @"SMDanmakuViewController"}];
     [self.array addObject:@{ @"SMCompress" : @"SMCompressViewController"}];
+    [self.array addObject:@{ @"SMAVPlayerView" : @"SMAVPlayerViewController"}];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
     self.tableView.delegate = self;
