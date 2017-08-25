@@ -1,7 +1,7 @@
 
 ## Demo
 
---
+--------------
 
 <p align="left">
 ![enter image description here]
@@ -12,7 +12,7 @@
 
 在使用中有任何问题都可以提 issue, 欢迎加入QQ群:475814382
 
---
+--------------
 ### SMEmitterView
 ![image](https://github.com/icoderRo/SMAnimationDemo/blob/master/Resource/emitterViewAnimation/emitterView.gif) ![image](https://github.com/icoderRo/SMAnimationDemo/blob/master/Resource/emitterViewAnimation/emitterViewbg.gif)
 
