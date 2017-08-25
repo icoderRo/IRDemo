@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F4330FAA1F4EC0D100DECF67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330FA91F4EC0D100DECF67 /* AppDelegate.swift */; };
+		F4330FAC1F4EC0D100DECF67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330FAB1F4EC0D100DECF67 /* ViewController.swift */; };
+		F4330FAF1F4EC0D100DECF67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4330FAD1F4EC0D100DECF67 /* Main.storyboard */; };
+		F4330FB11F4EC0D100DECF67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4330FB01F4EC0D100DECF67 /* Assets.xcassets */; };
+		F4330FB41F4EC0D100DECF67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4330FB21F4EC0D100DECF67 /* LaunchScreen.storyboard */; };
+		F4330FBF1F4EC20000DECF67 /* MVCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330FBE1F4EC20000DECF67 /* MVCVC.swift */; };
+		F4330FC11F4EC21200DECF67 /* MVPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330FC01F4EC21200DECF67 /* MVPVC.swift */; };
+		F4330FC31F4EC22600DECF67 /* MVVMVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330FC21F4EC22600DECF67 /* MVVMVC.swift */; };
+		F4330FC51F4EC50500DECF67 /* MVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330FC41F4EC50500DECF67 /* MVCModel.swift */; };
+		F4330FC71F4EC51600DECF67 /* MVCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330FC61F4EC51600DECF67 /* MVCView.swift */; };
+		F4330FC91F4ECCB000DECF67 /* MVPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330FC81F4ECCB000DECF67 /* MVPView.swift */; };
+		F4330FCB1F4ECCE800DECF67 /* MVPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330FCA1F4ECCE800DECF67 /* MVPModel.swift */; };
+		F4330FCD1F4ECD0A00DECF67 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330FCC1F4ECD0A00DECF67 /* Presenter.swift */; };
+		F4330FCF1F4EDAAE00DECF67 /* MVVMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330FCE1F4EDAAE00DECF67 /* MVVMModel.swift */; };
+		F4330FD11F4EDABC00DECF67 /* MVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330FD01F4EDABC00DECF67 /* MVVMViewModel.swift */; };
+		F4330FD31F4EDAD200DECF67 /* MVVMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330FD21F4EDAD200DECF67 /* MVVMView.swift */; };
+		F4330FD61F4FC39B00DECF67 /* MVVMController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330FD51F4FC39B00DECF67 /* MVVMController.swift */; };
+		F4330FDB1F4FC55200DECF67 /* MVVMCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330FD91F4FC55200DECF67 /* MVVMCell.swift */; };
+		F4330FDC1F4FC55200DECF67 /* MVVMCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4330FDA1F4FC55200DECF67 /* MVVMCell.xib */; };
+		F4330FDE1F4FC5D400DECF67 /* MVVMVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4330FDD1F4FC5D400DECF67 /* MVVMVM.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F4330FA61F4EC0D100DECF67 /* iOS-MVX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-MVX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4330FA91F4EC0D100DECF67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4330FAB1F4EC0D100DECF67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F4330FAE1F4EC0D100DECF67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4330FB01F4EC0D100DECF67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4330FB31F4EC0D100DECF67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F4330FB51F4EC0D100DECF67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4330FBE1F4EC20000DECF67 /* MVCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVCVC.swift; sourceTree = "<group>"; };
+		F4330FC01F4EC21200DECF67 /* MVPVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPVC.swift; sourceTree = "<group>"; };
+		F4330FC21F4EC22600DECF67 /* MVVMVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMVC.swift; sourceTree = "<group>"; };
+		F4330FC41F4EC50500DECF67 /* MVCModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVCModel.swift; sourceTree = "<group>"; };
+		F4330FC61F4EC51600DECF67 /* MVCView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVCView.swift; sourceTree = "<group>"; };
+		F4330FC81F4ECCB000DECF67 /* MVPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPView.swift; sourceTree = "<group>"; };
+		F4330FCA1F4ECCE800DECF67 /* MVPModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPModel.swift; sourceTree = "<group>"; };
+		F4330FCC1F4ECD0A00DECF67 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		F4330FCE1F4EDAAE00DECF67 /* MVVMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMModel.swift; sourceTree = "<group>"; };
+		F4330FD01F4EDABC00DECF67 /* MVVMViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMViewModel.swift; sourceTree = "<group>"; };
+		F4330FD21F4EDAD200DECF67 /* MVVMView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMView.swift; sourceTree = "<group>"; };
+		F4330FD51F4FC39B00DECF67 /* MVVMController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMController.swift; sourceTree = "<group>"; };
+		F4330FD91F4FC55200DECF67 /* MVVMCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMCell.swift; sourceTree = "<group>"; };
+		F4330FDA1F4FC55200DECF67 /* MVVMCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MVVMCell.xib; sourceTree = "<group>"; };
+		F4330FDD1F4FC5D400DECF67 /* MVVMVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMVM.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4330FA31F4EC0D100DECF67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F4330F9D1F4EC0D100DECF67 = {
+			isa = PBXGroup;
+			children = (
+				F4330FBD1F4EC0FE00DECF67 /* MVVM */,
+				F4330FBC1F4EC0FE00DECF67 /* MVP */,
+				F4330FBB1F4EC0FE00DECF67 /* MVC */,
+				F4330FA81F4EC0D100DECF67 /* iOS-MVX */,
+				F4330FA71F4EC0D100DECF67 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4330FA71F4EC0D100DECF67 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4330FA61F4EC0D100DECF67 /* iOS-MVX.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4330FA81F4EC0D100DECF67 /* iOS-MVX */ = {
+			isa = PBXGroup;
+			children = (
+				F4330FA91F4EC0D100DECF67 /* AppDelegate.swift */,
+				F4330FAB1F4EC0D100DECF67 /* ViewController.swift */,
+				F4330FAD1F4EC0D100DECF67 /* Main.storyboard */,
+				F4330FB01F4EC0D100DECF67 /* Assets.xcassets */,
+				F4330FB21F4EC0D100DECF67 /* LaunchScreen.storyboard */,
+				F4330FB51F4EC0D100DECF67 /* Info.plist */,
+			);
+			path = "iOS-MVX";
+			sourceTree = "<group>";
+		};
+		F4330FBB1F4EC0FE00DECF67 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				F4330FBE1F4EC20000DECF67 /* MVCVC.swift */,
+				F4330FC41F4EC50500DECF67 /* MVCModel.swift */,
+				F4330FC61F4EC51600DECF67 /* MVCView.swift */,
+			);
+			name = MVC;
+			path = "iOS-MVX/MVC";
+			sourceTree = "<group>";
+		};
+		F4330FBC1F4EC0FE00DECF67 /* MVP */ = {
+			isa = PBXGroup;
+			children = (
+				F4330FC01F4EC21200DECF67 /* MVPVC.swift */,
+				F4330FC81F4ECCB000DECF67 /* MVPView.swift */,
+				F4330FCA1F4ECCE800DECF67 /* MVPModel.swift */,
+				F4330FCC1F4ECD0A00DECF67 /* Presenter.swift */,
+			);
+			name = MVP;
+			path = "iOS-MVX/MVP";
+			sourceTree = "<group>";
+		};
+		F4330FBD1F4EC0FE00DECF67 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				F4330FD41F4FC2CF00DECF67 /* TableView */,
+				F4330FC21F4EC22600DECF67 /* MVVMVC.swift */,
+				F4330FCE1F4EDAAE00DECF67 /* MVVMModel.swift */,
+				F4330FD01F4EDABC00DECF67 /* MVVMViewModel.swift */,
+				F4330FD21F4EDAD200DECF67 /* MVVMView.swift */,
+			);
+			name = MVVM;
+			path = "iOS-MVX/MVVM";
+			sourceTree = "<group>";
+		};
+		F4330FD41F4FC2CF00DECF67 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				F4330FD51F4FC39B00DECF67 /* MVVMController.swift */,
+				F4330FDD1F4FC5D400DECF67 /* MVVMVM.swift */,
+				F4330FD91F4FC55200DECF67 /* MVVMCell.swift */,
+				F4330FDA1F4FC55200DECF67 /* MVVMCell.xib */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4330FA51F4EC0D100DECF67 /* iOS-MVX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4330FB81F4EC0D100DECF67 /* Build configuration list for PBXNativeTarget "iOS-MVX" */;
+			buildPhases = (
+				F4330FA21F4EC0D100DECF67 /* Sources */,
+				F4330FA31F4EC0D100DECF67 /* Frameworks */,
+				F4330FA41F4EC0D100DECF67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS-MVX";
+			productName = "iOS-MVX";
+			productReference = F4330FA61F4EC0D100DECF67 /* iOS-MVX.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4330F9E1F4EC0D100DECF67 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = simon;
+				TargetAttributes = {
+					F4330FA51F4EC0D100DECF67 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F4330FA11F4EC0D100DECF67 /* Build configuration list for PBXProject "iOS-MVX" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4330F9D1F4EC0D100DECF67;
+			productRefGroup = F4330FA71F4EC0D100DECF67 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4330FA51F4EC0D100DECF67 /* iOS-MVX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4330FA41F4EC0D100DECF67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4330FB41F4EC0D100DECF67 /* LaunchScreen.storyboard in Resources */,
+				F4330FB11F4EC0D100DECF67 /* Assets.xcassets in Resources */,
+				F4330FAF1F4EC0D100DECF67 /* Main.storyboard in Resources */,
+				F4330FDC1F4FC55200DECF67 /* MVVMCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4330FA21F4EC0D100DECF67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4330FDE1F4FC5D400DECF67 /* MVVMVM.swift in Sources */,
+				F4330FC51F4EC50500DECF67 /* MVCModel.swift in Sources */,
+				F4330FAC1F4EC0D100DECF67 /* ViewController.swift in Sources */,
+				F4330FD31F4EDAD200DECF67 /* MVVMView.swift in Sources */,
+				F4330FC31F4EC22600DECF67 /* MVVMVC.swift in Sources */,
+				F4330FAA1F4EC0D100DECF67 /* AppDelegate.swift in Sources */,
+				F4330FD11F4EDABC00DECF67 /* MVVMViewModel.swift in Sources */,
+				F4330FCD1F4ECD0A00DECF67 /* Presenter.swift in Sources */,
+				F4330FC71F4EC51600DECF67 /* MVCView.swift in Sources */,
+				F4330FCF1F4EDAAE00DECF67 /* MVVMModel.swift in Sources */,
+				F4330FD61F4FC39B00DECF67 /* MVVMController.swift in Sources */,
+				F4330FDB1F4FC55200DECF67 /* MVVMCell.swift in Sources */,
+				F4330FC11F4EC21200DECF67 /* MVPVC.swift in Sources */,
+				F4330FC91F4ECCB000DECF67 /* MVPView.swift in Sources */,
+				F4330FCB1F4ECCE800DECF67 /* MVPModel.swift in Sources */,
+				F4330FBF1F4EC20000DECF67 /* MVCVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F4330FAD1F4EC0D100DECF67 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4330FAE1F4EC0D100DECF67 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F4330FB21F4EC0D100DECF67 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4330FB31F4EC0D100DECF67 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F4330FB61F4EC0D100DECF67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F4330FB71F4EC0D100DECF67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F4330FB91F4EC0D100DECF67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "iOS-MVX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.simon.framework.iOS-MVX";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F4330FBA1F4EC0D100DECF67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "iOS-MVX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.simon.framework.iOS-MVX";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4330FA11F4EC0D100DECF67 /* Build configuration list for PBXProject "iOS-MVX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4330FB61F4EC0D100DECF67 /* Debug */,
+				F4330FB71F4EC0D100DECF67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4330FB81F4EC0D100DECF67 /* Build configuration list for PBXNativeTarget "iOS-MVX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4330FB91F4EC0D100DECF67 /* Debug */,
+				F4330FBA1F4EC0D100DECF67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4330F9E1F4EC0D100DECF67 /* Project object */;
+}
