@@ -23,6 +23,7 @@
 		F4D182A11F501FFF0044330F /* SMEmitterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D1828E1F501FFF0044330F /* SMEmitterView.m */; };
 		F4D182A21F501FFF0044330F /* SMEmitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D182901F501FFF0044330F /* SMEmitterViewController.m */; };
 		F4D182A31F501FFF0044330F /* SMAVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D182931F501FFF0044330F /* SMAVPlayerViewController.m */; };
+		F4E65B171F53B28E00412481 /* SMLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E65B161F53B28E00412481 /* SMLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		F4D182901F501FFF0044330F /* SMEmitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMEmitterViewController.m; sourceTree = "<group>"; };
 		F4D182921F501FFF0044330F /* SMAVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAVPlayerViewController.h; sourceTree = "<group>"; };
 		F4D182931F501FFF0044330F /* SMAVPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMAVPlayerViewController.m; sourceTree = "<group>"; };
+		F4E65B161F53B28E00412481 /* SMLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		F4D182731F501FFF0044330F /* SMDemoList */ = {
 			isa = PBXGroup;
 			children = (
+				F4E65B151F53B28E00412481 /* SMLayout */,
 				F4D182741F501FFF0044330F /* Main */,
 				F4D182801F501FFF0044330F /* SMCompressVideoToMP4 */,
 				F4D182831F501FFF0044330F /* SMDanmaku */,
@@ -151,6 +154,14 @@
 				F4D182931F501FFF0044330F /* SMAVPlayerViewController.m */,
 			);
 			path = SMVideoPlayer;
+			sourceTree = "<group>";
+		};
+		F4E65B151F53B28E00412481 /* SMLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F4E65B161F53B28E00412481 /* SMLayout.swift */,
+			);
+			path = SMLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +249,7 @@
 				F4D182A21F501FFF0044330F /* SMEmitterViewController.m in Sources */,
 				F4D182941F501FFF0044330F /* AppDelegate.m in Sources */,
 				F4D182A11F501FFF0044330F /* SMEmitterView.m in Sources */,
+				F4E65B171F53B28E00412481 /* SMLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
